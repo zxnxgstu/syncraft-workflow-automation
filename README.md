@@ -1,4 +1,4 @@
-# Syncraft
+﻿# Syncraft
 
 **Connect. Automate. Run.**
 
@@ -12,13 +12,13 @@ A typical flow looks like:
 
 ```text
 Webhook / Manual / Schedule
-            ↓
+            в†“
        Transform data
-            ↓
+            в†“
         HTTP request
-            ↓
+            в†“
       Telegram / Log
-            ↓
+            в†“
      Execution history
 ```
 
@@ -26,17 +26,17 @@ Webhook / Manual / Schedule
 
 ### Product experience
 - connected-systems visual identity with animated network/orbit hero
-- full light and dark themes
+- full light and dark themes with distinct visual treatment
 - responsive sidebar and navigation
 - login + registration screen
-- dashboard metrics and activity chart
+- dashboard metrics and adaptive execution activity chart
 - workflow list with search/filter support
 - visual workflow builder
 - node inspector and test payload runner
 - execution history and detailed log drawer
 - reusable workflow templates
 - integrations catalog
-- settings/security screen
+- account/settings screen
 
 ### Workflow engine
 - manual trigger
@@ -128,23 +128,23 @@ The catalog entries are intentionally visible because the architecture is meant 
 ## Architecture
 
 ```text
-┌─────────────────────────────┐
-│ React + TypeScript + Vite   │
-│ Dashboard / Builder / Logs  │
-└──────────────┬──────────────┘
-               │ REST / JWT
-               ▼
-┌─────────────────────────────┐
-│ FastAPI                     │
-│ Auth / Workflows / Engine   │
-│ Webhooks / Scheduler        │
-└──────────────┬──────────────┘
-               │ SQLAlchemy
-               ▼
-┌─────────────────────────────┐
-│ PostgreSQL                  │
-│ Users / Flows / Runs / Logs │
-└─────────────────────────────┘
+в”Њв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”ђ
+в”‚ React + TypeScript + Vite   в”‚
+в”‚ Dashboard / Builder / Logs  в”‚
+в””в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”¬в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”
+               в”‚ REST / JWT
+               в–ј
+в”Њв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”ђ
+в”‚ FastAPI                     в”‚
+в”‚ Auth / Workflows / Engine   в”‚
+в”‚ Webhooks / Scheduler        в”‚
+в””в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”¬в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”
+               в”‚ SQLAlchemy
+               в–ј
+в”Њв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”ђ
+в”‚ PostgreSQL                  в”‚
+в”‚ Users / Flows / Runs / Logs в”‚
+в””в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”
 ```
 
 ## Run backend tests
@@ -182,4 +182,5 @@ The UI uses a distinct connected-systems identity: deep graphite/green surfaces,
 ## Portfolio
 
 Ready-to-use portfolio copy is in [`docs/PORTFOLIO.md`](docs/PORTFOLIO.md).
+
 
