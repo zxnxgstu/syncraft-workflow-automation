@@ -1,0 +1,50 @@
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+node_modules/
+dist/
+.vscode/
+.idea/
+.DS_Store
+*.log
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Frontend
+node_modules/
+dist/
+.vite/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Coverage
+.coverage
+htmlcov/
+
+# Local databases
+*.db
+
+# TypeScript build cache
+*.tsbuildinfo

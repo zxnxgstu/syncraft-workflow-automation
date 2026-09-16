@@ -1,0 +1,50 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: syncraft
+      POSTGRES_USER: syncraft
+      POSTGRES_PASSWORD: syncraft
+    volumes:
+      - syncraft_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U syncraft -d syncraft"]
+      interval: 5s
+      timeout: 3s
+      retries: 15
+
+  backend:
+    build: ./backend
+    environment:
+      APP_NAME: Syncraft API
+      APP_ENV: development
+      DATABASE_URL: postgresql+psycopg://syncraft:syncraft@db:5432/syncraft
+      FRONTEND_ORIGIN: http://localhost:5173
+      JWT_SECRET: change-me-in-production
+      ACCESS_TOKEN_MINUTES: 30
+      REFRESH_TOKEN_DAYS: 14
+      DEMO_EMAIL: demo@syncraft.dev
+      DEMO_PASSWORD: Syncraft123!
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  frontend:
+    build: ./frontend
+    environment:
+      VITE_API_URL: http://localhost:8000
+    ports:
+      - "5173:5173"
+    depends_on:
+      backend:
+        condition: service_healthy
+
+volumes:
+  syncraft_pgdata:
