@@ -4,7 +4,31 @@
 
 Syncraft is a portfolio-grade workflow automation and API integration platform built with FastAPI, PostgreSQL, React and Docker. It is designed to look and behave like a real modern SaaS product rather than a tutorial CRUD app.
 
+## Product tour
 
+### Automation Dashboard
+
+Monitor workflow activity, execution health and key automation metrics from a responsive overview.
+
+![Syncraft dashboard showing workflow metrics and execution activity](docs/screenshots/dashboard.png)
+
+### Visual Workflow Builder
+
+Build automation flows with configurable triggers, processing steps and actions in a focused visual editor.
+
+![Syncraft visual workflow builder with connected automation nodes](docs/screenshots/workflow-builder.png)
+
+### Execution Monitoring
+
+Review workflow runs, statuses and timing, then inspect detailed logs and output for each execution.
+
+![Syncraft execution history with workflow run details](docs/screenshots/executions.png)
+
+### Workflow Templates
+
+Start quickly with reusable templates for common webhook, API and notification workflows.
+
+![Syncraft workflow template catalog](docs/screenshots/workflow-templates.png)
 
 ## How Syncraft works
 
@@ -14,13 +38,17 @@ A typical flow looks like:
 
 ```text
 Webhook / Manual / Schedule
-            в†“
+            |
+            v
        Transform data
-            в†“
+            |
+            v
         HTTP request
-            в†“
+            |
+            v
       Telegram / Log
-            в†“
+            |
+            v
      Execution history
 ```
 
@@ -130,23 +158,23 @@ The catalog entries are intentionally visible because the architecture is meant 
 ## Architecture
 
 ```text
-в”Њв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”ђ
-в”‚ React + TypeScript + Vite   в”‚
-в”‚ Dashboard / Builder / Logs  в”‚
-в””в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”¬в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”
-               в”‚ REST / JWT
-               в–ј
-в”Њв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”ђ
-в”‚ FastAPI                     в”‚
-в”‚ Auth / Workflows / Engine   в”‚
-в”‚ Webhooks / Scheduler        в”‚
-в””в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”¬в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”
-               в”‚ SQLAlchemy
-               в–ј
-в”Њв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”ђ
-в”‚ PostgreSQL                  в”‚
-в”‚ Users / Flows / Runs / Logs в”‚
-в””в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”
++-----------------------------+
+| React + TypeScript + Vite   |
+| Dashboard / Builder / Logs  |
++-----------------------------+
+               | REST / JWT
+               v
++-----------------------------+
+| FastAPI                     |
+| Auth / Workflows / Engine   |
+| Webhooks / Scheduler        |
++-----------------------------+
+               | SQLAlchemy
+               v
++-----------------------------+
+| PostgreSQL                  |
+| Users / Flows / Runs / Logs |
++-----------------------------+
 ```
 
 ## Run backend tests
