@@ -4,7 +4,9 @@
 
 Syncraft is a portfolio-grade workflow automation and API integration platform built with FastAPI, PostgreSQL, React and Docker. It is designed to look and behave like a real modern SaaS product rather than a tutorial CRUD app.
 
-## What it does
+
+
+## How Syncraft works
 
 Users can create automation workflows, choose how they start, add processing nodes, run them, and inspect every execution.
 
@@ -182,5 +184,6 @@ The UI uses a distinct connected-systems identity: deep graphite/green surfaces,
 ## Portfolio
 
 Ready-to-use portfolio copy is in [`docs/PORTFOLIO.md`](docs/PORTFOLIO.md).
+
 
 
